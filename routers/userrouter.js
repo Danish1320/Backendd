@@ -17,8 +17,9 @@ router.post('/add', (req, res) => {
     });
 });
 
-router.get('/getall', (req, res) => {
-    res.send('Response from user getall');
+router.put('/update/:id', (req, res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body)
+    .then((result))
 });
 
 // : denotes url parameter
